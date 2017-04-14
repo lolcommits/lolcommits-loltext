@@ -69,7 +69,8 @@ describe Lolcommits::Plugin::Loltext do
       end
 
       it 'should allow plugin options to be configured' do
-        inputs = ['true'] # enabled
+        # enabled
+        inputs = ['true']
 
         # styling message and sha
         inputs += %w(
@@ -81,7 +82,8 @@ describe Lolcommits::Plugin::Loltext do
           true
         ) * 2
 
-        inputs << 'false' # no overlay
+        # styling overlay
+        inputs += %w(true  #2884ae,#7e231f 40)
 
         configured_plugin_options = {}
         output = fake_io_capture(inputs: inputs) do
@@ -107,7 +109,9 @@ describe Lolcommits::Plugin::Loltext do
             uppercase: true
           },
           overlay: {
-            enabled: false
+            enabled: true,
+            overlay_colors: ['#2884ae', '#7e231f'],
+            overlay_percent: 40
           }
         })
       end
