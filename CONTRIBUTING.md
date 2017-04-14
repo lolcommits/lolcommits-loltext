@@ -15,7 +15,7 @@ When you are happy with your change, run the full test suite:
     bundle exec rake
 
 With a passing test suite, commit your changes, push and submit a new [Pull
-Request](https://github.com/lolcommits/lolcommits-plugin-loltext/compare):
+Request](https://github.com/lolcommits/lolcommits-loltext/compare):
 
     git commit -am 'Added some feature'
     git push origin my-new-feature
@@ -27,7 +27,7 @@ request gets accepted:
 
 * Explain what your are doing (and why) in your Pull Request description.
 * If you are fixing an
-  [issue](https://github.com/lolcommits/lolcommits-plugin-loltext/issues), link to
+  [issue](https://github.com/lolcommits/lolcommits-loltext/issues), link to
   it in your description and [mention
   it](https://help.github.com/articles/closing-issues-via-commit-messages) in
   the commit message.
