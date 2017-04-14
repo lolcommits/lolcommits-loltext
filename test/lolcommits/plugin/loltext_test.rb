@@ -17,6 +17,14 @@ describe Lolcommits::Plugin::Loltext do
     ::Lolcommits::Plugin::Loltext.runner_order.must_equal [:postcapture]
   end
 
+  describe 'default font' do
+    it 'should have the correct file permissions' do
+      font_permissions = File.lstat(Lolcommits::Plugin::Loltext::DEFAULT_FONT_PATH).mode & 0o777
+      (font_permissions == 0o644).must_equal(true,
+        "expected perms of 644/664 but instead got #{format '%o', font_permissions}")
+    end
+  end
+
   describe 'with a runner' do
     def runner
       # a simple lolcommits runner with an empty configuration Hash
@@ -44,20 +52,6 @@ describe Lolcommits::Plugin::Loltext do
       end
     end
 
-    # describe '#run_postcapture' do
-
-    #   before { commit_repo_with_message }
-
-    #   it 'should output a message to stdout' do
-    #     in_repo do
-    #       Proc.new { plugin.run_postcapture }.
-    #         must_output "✨  wow! #{last_commit.sha[0..10]} is your best looking commit yet! 😘  💻\n"
-    #     end
-    #   end
-
-    #   after { teardown_repo }
-    # end
-
     describe '#enabled?' do
       it 'should be true by default' do
         plugin.enabled?.must_equal true
@@ -70,19 +64,53 @@ describe Lolcommits::Plugin::Loltext do
     end
 
     describe 'configuration' do
-      it 'should be configured by default' do
-        plugin.configured?.must_equal true
+      it 'should not be configured by default' do
+        plugin.configured?.must_equal false
       end
 
-      # it 'should allow plugin options to be configured' do
-      #   configured_plugin_options = {}
+      it 'should allow plugin options to be configured' do
+        inputs = ['true'] # enabled
 
-      #   output = fake_io_capture(inputs: %w(true)) do
-      #     configured_plugin_options = plugin.configure_options!
-      #   end
+        # styling message and sha
+        inputs += %w(
+          red
+          myfont.ttf
+          SE
+          38
+          orange
+          true
+        ) * 2
 
-      #   configured_plugin_options.must_equal( { "enabled" => true })
-      # end
+        inputs << 'false' # no overlay
+
+        configured_plugin_options = {}
+        output = fake_io_capture(inputs: inputs) do
+          configured_plugin_options = plugin.configure_options!
+        end
+
+        configured_plugin_options.must_equal( {
+          "enabled" => true,
+          message: {
+            color: 'red',
+            font: 'myfont.ttf',
+            position: 'SE',
+            size: 38,
+            stroke_color: 'orange',
+            uppercase: true
+          },
+          sha: {
+            color: 'red',
+            font: 'myfont.ttf',
+            position: 'SE',
+            size: 38,
+            stroke_color: 'orange',
+            uppercase: true
+          },
+          overlay: {
+            enabled: false
+          }
+        })
+      end
 
       it 'should indicate when configured' do
         plugin.runner.config = valid_enabled_config

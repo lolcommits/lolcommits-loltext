@@ -106,8 +106,10 @@ module Lolcommits
 
         transformed_position = position_transform(config_option(type, :position))
         annotate_location = '0'
+
+        # move South gravity off the edge of the image.
         if transformed_position == 'South'
-          annotate_location = '+0+20' # Move South gravity off the edge of the image.
+          annotate_location = '+0+20'
         end
 
         string.upcase! if config_option(type, :uppercase)
