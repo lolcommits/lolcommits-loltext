@@ -25,7 +25,8 @@ You can easily apply fonts and coloring to achieve something like this:
 <img width='320' height='240'
 src='https://pbs.twimg.com/media/Cj9dD_jWsAAVj3G.jpg' title='hipster commit' />
 
-See [below]() for more information on the options available.
+See [below](https://github.com/lolcommits/lolcommits-loltext#configuration) for
+more information on the options available.
 
 ## Requirements
 
