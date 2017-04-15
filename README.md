@@ -10,20 +10,18 @@
 every time you git commit code, and archives a lolcat style image with it. Git
 blame has never been so much fun!
 
-This plugin annotates your lolcommit with the commit message and sha text. You
-can style and position these anyway you like, or add a transparent overlay color
-that covers the entire image.
+This plugin annotates each lolcommit with the commit message and sha text. You
+can style and position these however you like, or add a transparent overlay
+color that covers the entire image.
 
-By default your lolcommit will look something like this:
+By default your lolcommit will look something like this (maybe without the
+horse):
 
-<img width='320' height='240'
-src='http://farm8.staticflickr.com/7378/10213630734_17d59a3482.jpg' title='horse
-commit' />
+![horse commit](assets/images/horse.jpg)
 
-You can easily apply fonts and coloring to achieve something like this:
+You can easily change the plugin options to achieve something like this:
 
-<img width='320' height='240'
-src='https://pbs.twimg.com/media/Cj9dD_jWsAAVj3G.jpg' title='hipster commit' />
+![hipster commit](assets/images/hipster.jpg)
 
 See [below](https://github.com/lolcommits/lolcommits-loltext#configuration) for
 more information on the options available.
@@ -42,14 +40,14 @@ If you happen to uninstall this plugin gem, install it back with:
 
     $ gem install lolcommits-loltext
 
-Then configure and enable this plugin with:
+Then configure and enable with:
 
     $ lolcommits --config -p loltext
     # set enabled to `true` (and set other options or choose the defauts)
 
 That's it! Every lolcommit will now be stamped with your commit message and sha.
-Setting enabled to `false` will disable this plugin, an no text or color
-overlays will be applied.
+Setting enabled to `false` will disable this plugin and no text or color overlay
+will be applied.
 
 ### Configuration
 
@@ -64,22 +62,22 @@ The following options are available:
 * text position
 * uppercase text?
 * size (point size for the font)
-* stroke color (font outline color)
-* transparent overlay (fills your image with a random background color)
-* transparent overlay % (sets the fill colorise strength)
+* stroke color (font outline color, or none)
+* transparent overlay (cover the image with a random background color)
+* transparent overlay % (sets the fill colorize strength)
 
 Please note that:
 
 * The message and sha text can have different text options
-* Always use the full absolute path to fonts
 * Any blank options will use the default (indicated when prompted for an option)
+* Always use the full absolute path to font files
 * Valid text positions are NE, NW, SE, SW, S, C (centered)
-* Colors can be hex #FC0 values or strings 'white'
+* Colors can be hex values (#FC0) or strings (white, red etc.)
 * You can set one or more `overlay_colors` to pick from, separated with commas
 
-With these options it's possible to create your own unique lolcommit format.
+With these options it is possible to create your own unique lolcommit format.
 For example, to achieve these
-[hipster-styled](https://twitter.com/matthutchin/status/738411190343368704)
+[hipster styled](https://twitter.com/matthutchin/status/738411190343368704)
 commits, try the following:
 
 ```
