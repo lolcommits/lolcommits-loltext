@@ -17,11 +17,13 @@ color that covers the entire image.
 By default your lolcommit will look something like this (maybe without the
 horse):
 
-![horse commit](assets/images/horse.jpg)
+![horse
+commit](https://github.com/lolcommits/lolcommits-loltext/raw/master/assets/images/horse.jpg)
 
 You can easily change the plugin options to achieve something like this:
 
-![hipster commit](assets/images/hipster.jpg)
+![hipster
+commit](https://github.com/lolcommits/lolcommits-loltext/raw/master/assets/images/hipster.jpg)
 
 See [below](https://github.com/lolcommits/lolcommits-loltext#configuration) for
 more information on the options available.
