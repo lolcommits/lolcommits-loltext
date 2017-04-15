@@ -77,9 +77,9 @@ Please note that:
 * You can set one or more `overlay_colors` to pick from, separated with commas
 
 With these options it is possible to create your own unique lolcommit format.
-For example, to achieve these
-'[hipster styled](https://twitter.com/matthutchin/status/738411190343368704)' 🕶
-commits, try the following:
+To achieve these '[hipster
+styled](https://twitter.com/matthutchin/status/738411190343368704)' 🕶 commits,
+try the following:
 
 ```
 loltext:
