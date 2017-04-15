@@ -38,24 +38,23 @@ more information on the options available.
 ## Installation
 
 By default, this plugin is automatically included with the main lolcommits gem.
-If you happen to uninstall this plugin gem, install it back with:
+If you have uninstalled this gem, install it again with:
 
     $ gem install lolcommits-loltext
 
-Then configure and enable with:
+That's it! Every lolcommit will now be stamped with your commit message and sha.
+This plugin is enabled by default (if no configuration for it exists). To
+disable (so no text or overlay is applied) use:
 
     $ lolcommits --config -p loltext
-    # set enabled to `true` (and set other options or choose the defauts)
-
-That's it! Every lolcommit will now be stamped with your commit message and sha.
-Setting enabled to `false` will disable this plugin and no text or color overlay
-will be applied.
+    # and set enabled to `false`
 
 ### Configuration
 
 Configure this plugin with:
 
-    lolcommits --config -p loltext
+    $ lolcommits --config -p loltext
+    # set enabled to `true` (then set your own options or choose the defaults)
 
 The following options are available:
 
@@ -79,7 +78,7 @@ Please note that:
 
 With these options it is possible to create your own unique lolcommit format.
 For example, to achieve these
-[hipster styled](https://twitter.com/matthutchin/status/738411190343368704)
+'[hipster styled](https://twitter.com/matthutchin/status/738411190343368704)' 🕶
 commits, try the following:
 
 ```
