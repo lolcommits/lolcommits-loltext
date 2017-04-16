@@ -21,7 +21,6 @@ end
 
 # plugin gem test libs
 require 'lolcommits/loltext'
-require 'lolcommits/plugin/loltext'
 require 'minitest/autorun'
 
 # swallow all debug output during test runs
