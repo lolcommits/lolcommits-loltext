@@ -8,14 +8,14 @@ Gem::Specification.new do |spec|
   spec.version       = Lolcommits::Loltext::VERSION
   spec.authors       = ["Matthew Hutchinson"]
   spec.email         = ["matt@hiddenloop.com"]
-  spec.summary       = %q{lolcommits text annotation plugin}
+  spec.summary       = %q{lolcommits commit message annotation plugin}
 
   spec.description = <<-EOF
   Overlay the commit message and sha on your lolcommit. Configure text style,
   positioning and an optional transparent overlay.
   EOF
 
-  spec.homepage      = "https://lolcommits.github.io"
+  spec.homepage      = "https://github.com/lolcommits/lolcommits-loltext"
   spec.license       = "LGPL-3"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
