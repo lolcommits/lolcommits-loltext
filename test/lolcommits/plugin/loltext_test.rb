@@ -14,7 +14,7 @@ describe Lolcommits::Plugin::Loltext do
   end
 
   it 'should run on post capturing' do
-    ::Lolcommits::Plugin::Loltext.runner_order.must_equal [:postcapture]
+    ::Lolcommits::Plugin::Loltext.runner_order.must_equal [:post_capture]
   end
 
   describe 'default font' do

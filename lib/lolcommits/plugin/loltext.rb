@@ -18,12 +18,13 @@ module Lolcommits
       end
 
       # Returns position(s) of when this plugin should run during the capture
-      # process.
+      # process. We want to add text to the image after capturing, but before
+      # capture is ready for sharing.
       #
-      # @return [Array] the position(s) (:precapture and/or :postcapture)
+      # @return [Array] the position(s) (:post_capture)
       #
       def self.runner_order
-        [:postcapture]
+        [:post_capture]
       end
 
       ##
@@ -82,7 +83,7 @@ module Lolcommits
       #
       # Annotates the image with the git commit message and sha text
       #
-      def run_postcapture
+      def run_post_capture
         debug 'Annotating image via MiniMagick'
         image = MiniMagick::Image.open(runner.main_image)
         if config_option(:overlay, :enabled)
