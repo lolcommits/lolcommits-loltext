@@ -194,9 +194,9 @@ module Lolcommits
             overlay_percent: 50
           },
           border: {
+            color: 'white',            
             enabled: false,
             size: 10,
-            color: 'white',
           }
         }
       end
