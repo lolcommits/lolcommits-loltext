@@ -120,11 +120,7 @@ module Lolcommits
           padded_annotation = padded_annotation+config_option(:border,:size)
         end
 
-        # move South gravity off the edge of the image.
-        if transformed_position == 'South'
-          annotate_location = "+0+#{padded_annotation}"
-        end
-
+        # move all positions off the edge of the image
         case transformed_position
         when "South"
           annotate_location = "+0+#{padded_annotation}"
