@@ -85,6 +85,7 @@ describe Lolcommits::Plugin::Loltext do
         # styling overlay
         inputs += %w(true  #2884ae,#7e231f 40)
 
+        # border options
         inputs += %w(#e96d46 true 23)
 
         configured_plugin_options = {}
