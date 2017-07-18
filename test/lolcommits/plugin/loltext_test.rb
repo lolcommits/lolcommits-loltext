@@ -34,7 +34,7 @@ describe Lolcommits::Plugin::Loltext do
     end
 
     def plugin
-      @plugin ||= Lolcommits::Plugin::Loltext.new(runner)
+      @plugin ||= Lolcommits::Plugin::Loltext.new(runner: runner)
     end
 
     def valid_enabled_config
