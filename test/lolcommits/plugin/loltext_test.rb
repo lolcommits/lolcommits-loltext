@@ -40,7 +40,7 @@ describe Lolcommits::Plugin::Loltext do
     def valid_enabled_config
       @config ||= OpenStruct.new(
         read_configuration: {
-          plugin.class.name => { 'enabled' => true }
+          'loltext'=> { 'enabled' => true }
         }
       )
     end
@@ -58,7 +58,7 @@ describe Lolcommits::Plugin::Loltext do
       end
 
       it 'should true when configured' do
-        plugin.runner.config = valid_enabled_config
+        plugin.config = valid_enabled_config
         plugin.enabled?.must_equal true
       end
     end
@@ -117,7 +117,7 @@ describe Lolcommits::Plugin::Loltext do
       end
 
       it 'should indicate when configured' do
-        plugin.runner.config = valid_enabled_config
+        plugin.config = valid_enabled_config
         plugin.configured?.must_equal true
       end
 
@@ -127,7 +127,7 @@ describe Lolcommits::Plugin::Loltext do
         end
 
         it 'should be true for a valid configuration' do
-          plugin.runner.config = valid_enabled_config
+          plugin.config = valid_enabled_config
           plugin.valid_configuration?.must_equal true
         end
       end
