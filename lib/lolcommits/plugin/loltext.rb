@@ -73,6 +73,7 @@ module Lolcommits
           options[:message] = configure_sub_options(:message)
           options[:sha]     = configure_sub_options(:sha)
           options[:overlay] = configure_sub_options(:overlay)
+          options[:border]  = configure_sub_options(:border)
         end
         options
       end
@@ -93,6 +94,13 @@ module Lolcommits
           end
         end
 
+        if config_option(:border, :enabled)
+          image.combine_options do |c|
+            c.border "#{config_option(:border,:size)}x#{config_option(:border,:size)}"
+            c.bordercolor config_option(:border,:color)
+          end
+        end
+
         annotate(image, :message, clean_msg(runner.message))
         annotate(image, :sha, runner.sha)
         debug "Writing changed file to #{runner.main_image}"
@@ -108,9 +116,17 @@ module Lolcommits
         transformed_position = position_transform(config_option(type, :position))
         annotate_location = '0'
 
-        # move South gravity off the edge of the image.
-        if transformed_position == 'South'
-          annotate_location = '+0+20'
+        padded_annotation = 10
+        if config_option(:border, :enabled)
+          padded_annotation = padded_annotation+config_option(:border,:size)
+        end
+
+        # move all positions off the edge of the image
+        case transformed_position
+        when "South"
+          annotate_location = "+0+#{padded_annotation}"
+        when "NorthWest", "SouthWest", "NorthEast", "SouthEast"
+          annotate_location = "+#{padded_annotation}+#{padded_annotation}"
         end
 
         string.upcase! if config_option(type, :uppercase)
@@ -177,6 +193,11 @@ module Lolcommits
               '#5566ac', '#ed8833', '#f8991c', '#408c93', '#ba9109'
             ],
             overlay_percent: 50
+          },
+          border: {
+            color: 'white',            
+            enabled: false,
+            size: 10,
           }
         }
       end

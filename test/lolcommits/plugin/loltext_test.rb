@@ -85,6 +85,9 @@ describe Lolcommits::Plugin::Loltext do
         # styling overlay
         inputs += %w(true  #2884ae,#7e231f 40)
 
+        # border options
+        inputs += %w(#e96d46 true 23)
+
         configured_plugin_options = {}
         output = fake_io_capture(inputs: inputs) do
           configured_plugin_options = plugin.configure_options!
@@ -112,6 +115,11 @@ describe Lolcommits::Plugin::Loltext do
             enabled: true,
             overlay_colors: ['#2884ae', '#7e231f'],
             overlay_percent: 40
+          },
+          border: {
+            color: '#e96d46',
+            enabled: true,
+            size: 23,
           }
         })
       end
