@@ -96,8 +96,8 @@ module Lolcommits
 
         if config_option(:border, :enabled)
           image.combine_options do |c|
-            c.border "#{config_option(:border,:size)}x#{config_option(:border,:size)}"
-            c.bordercolor config_option(:border,:color)
+            c.border "#{config_option(:border, :size)}x#{config_option(:border, :size)}"
+            c.bordercolor config_option(:border, :color)
           end
         end
 
@@ -118,7 +118,7 @@ module Lolcommits
 
         padded_annotation = 10
         if config_option(:border, :enabled)
-          padded_annotation = padded_annotation+config_option(:border,:size)
+          padded_annotation = padded_annotation + config_option(:border, :size)
         end
 
         # move all positions off the edge of the image
@@ -195,7 +195,7 @@ module Lolcommits
             overlay_percent: 50
           },
           border: {
-            color: 'white',            
+            color: 'white',
             enabled: false,
             size: 10,
           }
