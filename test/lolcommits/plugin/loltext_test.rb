@@ -2,7 +2,6 @@ require 'test_helper'
 
 describe Lolcommits::Plugin::Loltext do
 
-  include Lolcommits::TestHelpers::GitRepo
   include Lolcommits::TestHelpers::FakeIO
 
   def plugin_name
