@@ -88,7 +88,7 @@ describe Lolcommits::Plugin::Loltext do
         inputs += %w(#e96d46 true 23)
 
         configured_plugin_options = {}
-        output = fake_io_capture(inputs: inputs) do
+        fake_io_capture(inputs: inputs) do
           configured_plugin_options = plugin.configure_options!
         end
 
