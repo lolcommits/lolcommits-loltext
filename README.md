@@ -83,7 +83,7 @@ try the following:
 
 ```
 loltext:
-  enabled: true
+  :enabled: true
   :message:
     :color: white
     :font: "/Users/matt/Library/Fonts/Raleway-Light.ttf"
