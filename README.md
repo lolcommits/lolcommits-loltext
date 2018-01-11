@@ -100,6 +100,8 @@ loltext:
     :uppercase: false
   :overlay:
     :enabled: true
+  :border:
+    :enabled: false
 ```
 
 **NOTE**: you can grab the '_Raleway-Light_' font for free from
