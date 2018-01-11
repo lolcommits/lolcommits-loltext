@@ -7,10 +7,12 @@ rvm:
  - 2.2.8
  - 2.3.5
  - 2.4.2
+ - 2.5.0
  - ruby-head
 
 before_install:
- - gem install bundler -v 1.13.7
+ - gem update --system
+ - gem install bundler
  - git --version
  - git config --global user.email "lol@commits.org"
  - git config --global user.name "Lolcommits"
