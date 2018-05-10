@@ -125,6 +125,8 @@ module Lolcommits
           c.font config_option(type, :font)
           c.annotate annotate_location, string
         end
+      rescue => error
+        debug("mogrify annotate returned non-zero status: #{error.message}")
       end
 
       # default text styling and positions
