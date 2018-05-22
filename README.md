@@ -1,10 +1,10 @@
 # Lolcommits Loltext
 
-[![Gem Version](https://img.shields.io/gem/v/lolcommits-loltext.svg?style=flat)](http://rubygems.org/gems/lolcommits-loltext)
-[![Travis Build Status](https://travis-ci.org/lolcommits/lolcommits-loltext.svg?branch=master)](https://travis-ci.org/lolcommits/lolcommits-loltext)
+[![Gem](https://img.shields.io/gem/v/lolcommits-loltext.svg?style=flat)](http://rubygems.org/gems/lolcommits-loltext)
+[![Travis](https://travis-ci.org/lolcommits/lolcommits-loltext.svg?branch=master)](https://travis-ci.org/lolcommits/lolcommits-loltext)
+[![Depfu](https://img.shields.io/depfu/lolcommits/lolcommits-loltext.svg?style=flat)](https://depfu.com/github/lolcommits/lolcommits-loltext)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/lolcommits/lolcommits-loltext.svg)](https://codeclimate.com/github/lolcommits/lolcommits-loltext/maintainability)
 [![Test Coverage](https://img.shields.io/codeclimate/c/lolcommits/lolcommits-loltext.svg)](https://codeclimate.com/github/lolcommits/lolcommits-loltext/test_coverage)
-[![Gem Dependency Status](https://gemnasium.com/badges/github.com/lolcommits/lolcommits-loltext.svg)](https://gemnasium.com/github.com/lolcommits/lolcommits-loltext)
 
 [lolcommits](https://lolcommits.github.io/) takes a snapshot with your webcam
 every time you git commit code, and archives a lolcat style image with it. Git
