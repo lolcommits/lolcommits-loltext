@@ -65,6 +65,6 @@ adheres to [Semantic Versioning](Semver).
 [0.0.4]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.1...v0.0.2
-[0.0.1]: https://github.com/lolcommits/lolcommits-loltext/compare/76488bb...v0.0.1
+[0.0.1]: https://github.com/lolcommits/lolcommits-loltext/compare/2c05e07...v0.0.1
 [KeepAChangelog]: http://keepachangelog.com/en/1.0.0/
 [Semver]: http://semver.org/spec/v2.0.0.html
