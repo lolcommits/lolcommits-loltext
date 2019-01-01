@@ -12,14 +12,6 @@ describe Lolcommits::Plugin::Loltext do
     ::Lolcommits::Plugin::Loltext.runner_order.must_equal [:post_capture]
   end
 
-  describe 'default font' do
-    it 'should have the correct file permissions' do
-      font_permissions = File.lstat(Lolcommits::Plugin::Loltext::DEFAULT_FONT_PATH).mode & 0o777
-      (font_permissions == 0o644).must_equal(true,
-        "expected perms of 644/664 but instead got #{format '%o', font_permissions}")
-    end
-  end
-
   describe 'with a runner' do
     def runner
       # a simple lolcommits runner with an empty configuration Hash
