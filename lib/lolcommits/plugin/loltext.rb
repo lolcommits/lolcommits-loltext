@@ -110,7 +110,7 @@ module Lolcommits
 
         if config_option(:overlay, :enabled)
           debug "Making colored overlay"
-          color = config_option(:overlay, :overlay_colors).sample
+          color = config_option(:overlay, :overlay_colors).split(',').map(&:strip).sample
           overlay_percent = config_option(:overlay, :overlay_percent).to_f
           overlay_percent = (255 * (overlay_percent/100)).round
 
