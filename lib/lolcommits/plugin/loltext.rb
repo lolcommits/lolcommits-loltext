@@ -88,7 +88,6 @@ module Lolcommits
           -y #{runner.main_video}`
         else
           result = image.composite(overlay_image) do |c|
-            c.compose "src-over"
             c.gravity "center"
           end
           debug "Writing changed file to #{runner.main_image}"
@@ -97,9 +96,8 @@ module Lolcommits
       end
 
       def make_overlay_image(image)
-        debug "Making overlay image"
+        debug "Making overlay image #{image.width}x#{image.height}"
         new_tempfile = MiniMagick::Utilities.tempfile(".png")
-
         overlay_image = MiniMagick::Tool::Convert.new do |i|
           i.size "#{image.width}x#{image.height}"
           i.xc "transparent"
@@ -121,10 +119,11 @@ module Lolcommits
         end
 
         if config_option(:border, :enabled)
-          debug "Adding border to overlay"
+          debug "Adding border to overlay with #{config_option(:border, :color)} at size #{config_option(:border, :size)}"
           # mogrify doesn't allow compose, format forces use of convert
           overlay_image.format("PNG32") do |c|
             c.compose "Copy"
+            c.shave config_option(:border, :size)
             c.bordercolor config_option(:border, :color)
             c.border config_option(:border, :size)
           end
