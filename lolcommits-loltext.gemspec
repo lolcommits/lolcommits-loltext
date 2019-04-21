@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
   spec.executables   = []
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 2.1"
+  spec.required_ruby_version = ">= 2.3"
 
   spec.add_development_dependency "lolcommits", ">= 0.11.0"
   spec.add_development_dependency "bundler"
