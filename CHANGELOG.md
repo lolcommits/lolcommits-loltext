@@ -9,6 +9,13 @@ adheres to [Semantic Versioning][Semver].
 
 - Your contribution here!
 
+## [0.1.0] - 2019-04-24
+### Removed
+- Support for Ruby < 2.3 (older rubies no longer supported)
+
+### Added
+- `frozen_string_literal: true` to all ruby files
+
 ## [0.0.9] - 2018-05-24
 ### Changed
 - Updated gemspec meta data links.
@@ -56,7 +63,8 @@ adheres to [Semantic Versioning][Semver].
 ### Changed
 - Initial release (Yanked)
 
-[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.9...HEAD
+[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.9.0...v0.1.0
 [0.0.9]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.6...v0.0.7
