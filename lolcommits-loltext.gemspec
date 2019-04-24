@@ -1,22 +1,20 @@
-# coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lolcommits/loltext/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "lolcommits-loltext"
-  spec.version       = Lolcommits::Loltext::VERSION
-  spec.authors       = ["Matthew Hutchinson"]
-  spec.email         = ["matt@hiddenloop.com"]
-  spec.summary       = %q{lolcommits commit message annotation plugin}
+  spec.name     = "lolcommits-loltext"
+  spec.version  = Lolcommits::Loltext::VERSION
+  spec.authors  = ["Matthew Hutchinson"]
+  spec.email    = ["matt@hiddenloop.com"]
+  spec.summary  = %q{lolcommits commit message annotation plugin}
+  spec.homepage = "https://github.com/lolcommits/lolcommits-loltext"
+  spec.license  = "LGPL-3"
 
-  spec.description = <<-EOF
+  spec.description = <<-DESC
   Overlay the commit message and sha on your lolcommit. Configure text style,
   positioning and an optional transparent overlay.
-  EOF
-
-  spec.homepage      = "https://github.com/lolcommits/lolcommits-loltext"
-  spec.license       = "LGPL-3"
+  DESC
 
   spec.metadata = {
     "homepage_uri"    => "https://github.com/lolcommits/lolcommits-loltext",
