@@ -9,7 +9,7 @@ project adheres to [Semantic Versioning][Semver].
 
 - Your contribution here!
 
-## [0.2.1] - 2019-05-10
+## [0.2.3] - 2019-05-10
 ### Changed
 - use runner.overlay instance to build overlay (requires at least
 lolcommits 0.14.0)
