@@ -2,12 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog][KeepAChangelog] and this project
-adheres to [Semantic Versioning][Semver].
+The format is based on [Keep a Changelog][KeepAChangelog] and this
+project adheres to [Semantic Versioning][Semver].
 
 ## [Unreleased]
 
 - Your contribution here!
+
+## [0.2.0] - 2019-05-10
+### Changed
+- use runner.overlay instance to build overlay (requires at least
+lolcommits 0.14.0)
+- improved debug messages throughout
+
+### Removed
+- Support for lolcommits < 0.14.0
 
 ## [0.1.0] - 2019-04-24
 ### Removed
@@ -63,7 +72,8 @@ adheres to [Semantic Versioning][Semver].
 ### Changed
 - Initial release (Yanked)
 
-[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.9.0...v0.1.0
 [0.0.9]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.7...v0.0.8
