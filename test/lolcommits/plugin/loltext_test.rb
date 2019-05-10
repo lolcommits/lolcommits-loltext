@@ -6,10 +6,6 @@ describe Lolcommits::Plugin::Loltext do
 
   include Lolcommits::TestHelpers::FakeIO
 
-  def plugin_name
-    'loltext'
-  end
-
   it 'should run on post capturing' do
     ::Lolcommits::Plugin::Loltext.runner_order.must_equal [:post_capture]
   end
