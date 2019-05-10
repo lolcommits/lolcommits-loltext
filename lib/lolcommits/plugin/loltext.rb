@@ -68,62 +68,27 @@ module Lolcommits
       #
       # Post-capture hook, runs after lolcommits captures a snapshot.
       #
-      # Annotates the image with the git commit message and sha text
+      # Annotate runner overlay with message, sha, optional border,
+      # and semi-transparent colored background (based on config)
       #
       def run_post_capture
-        debug 'Annotating image via MiniMagick'
-        # image = MiniMagick::Image.open(runner.main_image)
-        if runner.capture_animated?
-          image = MiniMagick::Image.open(runner.video_loc)
-        else
-          image = MiniMagick::Image.open(runner.snapshot_loc)
-        end
-
-        overlay_image = make_overlay_image(image)
-        debug "Compositing overlay"
-        debug "#{overlay_image.path}"
-
-        if runner.capture_animated? && File.exists?(runner.main_video) != ""
-          `ffmpeg -v quiet -nostats -i #{runner.video_loc} -i #{overlay_image.path} \
-          -filter_complex \
-          "scale2ref[0:v][1:v];[0:v][1:v] overlay=0:0" \
-          -y #{runner.main_video}`
-        else
-          result = image.composite(overlay_image) do |c|
-            c.gravity "center"
-          end
-          debug "Writing changed file to #{runner.main_image}"
-          result.write runner.main_image
-        end
-      end
-
-      def make_overlay_image(image)
-        debug "Making overlay image #{image.width}x#{image.height}"
-        new_tempfile = MiniMagick::Utilities.tempfile(".png")
-        overlay_image = MiniMagick::Tool::Convert.new do |i|
-          i.size "#{image.width}x#{image.height}"
-          i.xc "transparent"
-          i << new_tempfile.path
-        end
-
-        overlay_image = MiniMagick::Image.open(new_tempfile.path)
-
+        debug "creating annotation overlay with MiniMagick"
         if config_option(:overlay, :enabled)
-          debug "Making colored overlay"
           color = config_option(:overlay, :overlay_colors).split(',').map(&:strip).sample
           overlay_percent = config_option(:overlay, :overlay_percent).to_f
+          debug "adding colorized overlay (#{color} at #{overlay_percent}% opacity)"
           overlay_percent = (255 * (overlay_percent/100)).round
 
-          overlay_image.combine_options do |c|
+          runner.overlay.combine_options do |c|
             c.fill "#{color}#{sprintf('%02X',overlay_percent)}"
             c.draw "color 0,0 reset"
           end
         end
 
         if config_option(:border, :enabled)
-          debug "Adding border to overlay with #{config_option(:border, :color)} at size #{config_option(:border, :size)}"
+          debug "adding border (#{config_option(:border, :size)}px #{config_option(:border, :color)})"
           # mogrify doesn't allow compose, format forces use of convert
-          overlay_image.format("PNG32") do |c|
+          runner.overlay.format("PNG32") do |c|
             c.compose "Copy"
             c.shave config_option(:border, :size)
             c.bordercolor config_option(:border, :color)
@@ -131,17 +96,14 @@ module Lolcommits
           end
         end
 
-        annotate(overlay_image, :message, clean_msg(runner.message))
-        annotate(overlay_image, :sha, runner.sha)
-
-        overlay_image
+        annotate(runner.overlay, :message, clean_msg(runner.message))
+        annotate(runner.overlay, :sha, runner.sha)
       end
-
 
       private
 
       def annotate(image, type, string)
-        debug("annotating #{type} to overlay image with #{string}")
+        debug("annotating #{type} text (#{string})")
 
         transformed_position = position_transform(config_option(type, :position))
         annotate_location = '0'
