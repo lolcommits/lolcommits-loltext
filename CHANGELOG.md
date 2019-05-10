@@ -9,7 +9,7 @@ project adheres to [Semantic Versioning][Semver].
 
 - Your contribution here!
 
-## [0.2.0] - 2019-05-10
+## [0.2.1] - 2019-05-10
 ### Changed
 - use runner.overlay instance to build overlay (requires at least
 lolcommits 0.14.0)
@@ -72,8 +72,8 @@ lolcommits 0.14.0)
 ### Changed
 - Initial release (Yanked)
 
-[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.2.0...HEAD
-[0.2.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.1.0...v0.2.0
+[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.1.0...v0.2.1
 [0.1.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.9.0...v0.1.0
 [0.0.9]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.7...v0.0.8
