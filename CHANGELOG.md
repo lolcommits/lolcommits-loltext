@@ -9,6 +9,14 @@ project adheres to [Semantic Versioning][Semver].
 
 - Your contribution here!
 
+## [0.3.0] - 2019-05-20
+### Changed
+- update gemspec and README
+- Requires at least lolcommits >= `0.14.2`
+
+### Removed
+- Support for lolcommits < `0.14.2`
+
 ## [0.2.3] - 2019-05-10
 ### Changed
 - use runner.overlay instance to build overlay (requires at least
@@ -72,7 +80,8 @@ lolcommits 0.14.0)
 ### Changed
 - Initial release (Yanked)
 
-[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.1.0...v0.2.1
 [0.1.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.9.0...v0.1.0
 [0.0.9]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.0.8...v0.0.9
