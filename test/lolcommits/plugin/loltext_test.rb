@@ -7,7 +7,7 @@ describe Lolcommits::Plugin::Loltext do
   include Lolcommits::TestHelpers::FakeIO
 
   it 'should run on post capturing' do
-    ::Lolcommits::Plugin::Loltext.runner_order.must_equal [:post_capture]
+    _(::Lolcommits::Plugin::Loltext.runner_order).must_equal [:post_capture]
   end
 
   describe 'with a runner' do
@@ -26,19 +26,19 @@ describe Lolcommits::Plugin::Loltext do
 
     describe 'initalizing' do
       it 'should assign runner and an enabled option' do
-        plugin.runner.must_equal runner
-        plugin.options.must_equal [:enabled]
+        _(plugin.runner).must_equal runner
+        _(plugin.options).must_equal [:enabled]
       end
     end
 
     describe '#enabled?' do
       it 'should be true by default' do
-        plugin.enabled?.must_equal true
+        _(plugin.enabled?).must_equal true
       end
 
       it 'should true when configured' do
         plugin.configuration = valid_enabled_config
-        plugin.enabled?.must_equal true
+        _(plugin.enabled?).must_equal true
       end
     end
 
@@ -68,7 +68,7 @@ describe Lolcommits::Plugin::Loltext do
           configured_plugin_options = plugin.configure_options!
         end
 
-        configured_plugin_options.must_equal( {
+        _(configured_plugin_options).must_equal( {
           enabled: true,
           message: {
             color: 'red',
@@ -101,12 +101,12 @@ describe Lolcommits::Plugin::Loltext do
 
       describe '#valid_configuration?' do
         it 'should be trye even if config is not set' do
-          plugin.valid_configuration?.must_equal(true)
+          _(plugin.valid_configuration?).must_equal(true)
         end
 
         it 'should be true for a valid configuration' do
           plugin.configuration = valid_enabled_config
-          plugin.valid_configuration?.must_equal true
+          _(plugin.valid_configuration?).must_equal true
         end
       end
     end
