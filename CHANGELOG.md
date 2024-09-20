@@ -9,6 +9,10 @@ project adheres to [Semantic Versioning][Semver].
 
 - Your contribution here!
 
+## [0.5.0] - 2024-09-20
+### Removed
+- Support for Ruby < 3.1 (older rubies no longer supported)
+
 ## [0.4.0] - 2020-01-24
 ### Removed
 - Support for Ruby < 2.4 (older rubies no longer supported)

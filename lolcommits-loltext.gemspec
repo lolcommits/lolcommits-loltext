@@ -30,11 +30,10 @@ Gem::Specification.new do |spec|
   spec.executables   = []
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 2.4"
+  spec.required_ruby_version = ">= 3.1"
 
-  spec.add_development_dependency "lolcommits", ">= 0.14.2"
+  spec.add_development_dependency "lolcommits", ">= 0.17.0"
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest"
-  spec.add_development_dependency "simplecov"
 end

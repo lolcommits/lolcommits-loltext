@@ -1,10 +1,8 @@
 # Lolcommits Loltext
 
+[![Build](https://img.shields.io/github/actions/workflow/status/lolcommits/lolcommits-loltext/build.yml?branch=main&style=flat)](https://github.com/lolcommits/lolcommits-loltext/actions/workflows/build.yml)
 [![Gem](https://img.shields.io/gem/v/lolcommits-loltext.svg?style=flat)](http://rubygems.org/gems/lolcommits-loltext)
-[![Travis](https://img.shields.io/travis/com/lolcommits/lolcommits-loltext/master.svg?style=flat)](https://travis-ci.com/lolcommits/lolcommits-loltext)
 [![Depfu](https://img.shields.io/depfu/lolcommits/lolcommits-loltext.svg?style=flat)](https://depfu.com/github/lolcommits/lolcommits-loltext)
-[![Maintainability](https://api.codeclimate.com/v1/badges/2e0fa03867952572c5db/maintainability)](https://codeclimate.com/github/lolcommits/lolcommits-loltext/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/2e0fa03867952572c5db/test_coverage)](https://codeclimate.com/github/lolcommits/lolcommits-loltext/test_coverage)
 
 [lolcommits](https://lolcommits.github.io/) takes a snapshot with your
 webcam every time you git commit code, and archives a lolcat style image
@@ -30,7 +28,7 @@ more information on the options available.
 
 ## Requirements
 
-* Ruby >= 2.4
+* Ruby >= 3.1
 * A webcam
 * [ImageMagick](http://www.imagemagick.org)
 * [ffmpeg](https://www.ffmpeg.org) (optional) for animated gif capturing
@@ -143,8 +141,7 @@ requests](https://github.com/lolcommits/lolcommits-loltext/pulls) are
 welcome on GitHub.
 
 When submitting pull requests, remember to add tests covering any new
-behaviour, and ensure all tests are passing on [Travis
-CI](https://travis-ci.com/lolcommits/lolcommits-loltext). Read the
+behaviour, and ensure all tests are passing. Read the
 [contributing
 guidelines](https://github.com/lolcommits/lolcommits-loltext/blob/master/CONTRIBUTING.md)
 for more details.
@@ -163,9 +160,7 @@ The gem is available as open source under the terms of
 
 ## Links
 
-* [Travis CI](https://travis-ci.com/lolcommits/lolcommits-loltext)
-* [Test Coverage](https://codeclimate.com/github/lolcommits/lolcommits-loltext/test_coverage)
-* [Code Climate](https://codeclimate.com/github/lolcommits/lolcommits-loltext)
+* [CI](https://img.shields.io/github/actions/workflow/status/lolcommits/lolcommits-loltext/build.yml?branch=main&style=flat)](https://github.com/lolcommits/lolcommits-loltext/actions/workflows/build.yml)
 * [RDoc](http://rdoc.info/projects/lolcommits/lolcommits-loltext)
 * [Issues](http://github.com/lolcommits/lolcommits-loltext/issues)
 * [Report a bug](http://github.com/lolcommits/lolcommits-loltext/issues/new)
