@@ -100,7 +100,7 @@ describe Lolcommits::Plugin::Loltext do
       end
 
       describe '#valid_configuration?' do
-        it 'should be trye even if config is not set' do
+        it 'should be true even if config is not set' do
           _(plugin.valid_configuration?).must_equal(true)
         end
 
