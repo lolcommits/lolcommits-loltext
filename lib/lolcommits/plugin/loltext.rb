@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require 'lolcommits/plugin/base'
+require "lolcommits/plugin/base"
 
 module Lolcommits
   module Plugin
     class Loltext < Base
-
       DEFAULT_FONT_PATH = File.join(
         File.dirname(__FILE__), "../../../vendor/fonts/Impact.ttf"
       ).freeze
@@ -17,7 +16,7 @@ module Lolcommits
       # @return [Array] the position(s) (:post_capture)
       #
       def self.runner_order
-        [:post_capture]
+        [ :post_capture ]
       end
 
       ##
@@ -48,18 +47,18 @@ module Lolcommits
       # @return [Hash] a hash of configured plugin options
       #
       def configure_options!
-        puts '---------------------------------------------------------------'
-        puts '  LolText options '
-        puts ''
-        puts '  * any blank options will use the (default)'
-        puts '  * always use the full absolute path to fonts'
-        puts '  * valid text positions are NE, NW, SE, SW, S, C (centered)'
-        puts '  * colors can be hex #FC0 value or a string \'white\''
-        puts '      - use `none` for no stroke color'
-        puts '  * overlay fills your image with a random color'
-        puts '      - set one or more overlay_colors with a comma seperator'
-        puts '      - overlay_percent (0-100) sets the fill colorize strength'
-        puts '---------------------------------------------------------------'
+        puts "---------------------------------------------------------------"
+        puts "  LolText options "
+        puts ""
+        puts "  * any blank options will use the (default)"
+        puts "  * always use the full absolute path to fonts"
+        puts "  * valid text positions are NE, NW, SE, SW, S, C (centered)"
+        puts "  * colors can be hex #FC0 value or a string 'white'"
+        puts "      - use `none` for no stroke color"
+        puts "  * overlay fills your image with a random color"
+        puts "      - set one or more overlay_colors with a comma seperator"
+        puts "      - overlay_percent (0-100) sets the fill colorize strength"
+        puts "---------------------------------------------------------------"
 
         super
       end
@@ -74,13 +73,13 @@ module Lolcommits
       def run_post_capture
         debug "creating annotation overlay with MiniMagick"
         if config_option(:overlay, :enabled)
-          color = config_option(:overlay, :overlay_colors).split(',').map(&:strip).sample
+          color = config_option(:overlay, :overlay_colors).split(",").map(&:strip).sample
           overlay_percent = config_option(:overlay, :overlay_percent).to_f
           debug "adding colorized overlay (#{color} at #{overlay_percent}% opacity)"
           overlay_percent = (255 * (overlay_percent/100)).round
 
           runner.overlay.combine_options do |c|
-            c.fill "#{color}#{sprintf('%02X',overlay_percent)}"
+            c.fill "#{color}#{sprintf('%02X', overlay_percent)}"
             c.draw "color 0,0 reset"
           end
         end
@@ -106,7 +105,7 @@ module Lolcommits
         debug("annotating #{type} text (#{string})")
 
         transformed_position = position_transform(config_option(type, :position))
-        annotate_location = '0'
+        annotate_location = "0"
 
         padded_annotation = 10
         if config_option(:border, :enabled)
@@ -141,34 +140,34 @@ module Lolcommits
       def default_options
         {
           message: {
-            color: 'white',
+            color: "white",
             font: DEFAULT_FONT_PATH,
-            position: 'SW',
+            position: "SW",
             size: 48,
-            stroke_color: 'black',
+            stroke_color: "black",
             uppercase: false
           },
           sha: {
-            color: 'white',
+            color: "white",
             font: DEFAULT_FONT_PATH,
-            position: 'NE',
+            position: "NE",
             size: 32,
-            stroke_color: 'black',
+            stroke_color: "black",
             uppercase: false
           },
           overlay: {
             enabled: false,
             overlay_colors: [
-              '#2e4970', '#674685', '#ca242f', '#1e7882', '#2884ae', '#4ba000',
-              '#187296', '#7e231f', '#017d9f', '#e52d7b', '#0f5eaa', '#e40087',
-              '#5566ac', '#ed8833', '#f8991c', '#408c93', '#ba9109'
-            ].join(','),
+              "#2e4970", "#674685", "#ca242f", "#1e7882", "#2884ae", "#4ba000",
+              "#187296", "#7e231f", "#017d9f", "#e52d7b", "#0f5eaa", "#e40087",
+              "#5566ac", "#ed8833", "#f8991c", "#408c93", "#ba9109"
+            ].join(","),
             overlay_percent: 50
           },
           border: {
             enabled: false,
-            color: 'white',
-            size: 10,
+            color: "white",
+            size: 10
           }
         }
       end
@@ -176,18 +175,18 @@ module Lolcommits
       # explode psuedo-names for text positioning
       def position_transform(position)
         case position
-        when 'NE'
-          'NorthEast'
-        when 'NW'
-          'NorthWest'
-        when 'SE'
-          'SouthEast'
-        when 'SW'
-          'SouthWest'
-        when 'C'
-          'Center'
-        when 'S'
-          'South'
+        when "NE"
+          "NorthEast"
+        when "NW"
+          "NorthWest"
+        when "SE"
+          "SouthEast"
+        when "SW"
+          "SouthWest"
+        when "C"
+          "Center"
+        when "S"
+          "South"
         end
       end
 

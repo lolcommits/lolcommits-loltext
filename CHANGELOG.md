@@ -9,6 +9,11 @@ project adheres to [Semantic Versioning][Semver].
 
 - Your contribution here!
 
+## [0.5.1] - 2024-12-29
+### Changed
+- Push gems with bundler (not GitHub actions)
+- Updated documentation links
+
 ## [0.5.0] - 2024-09-20
 ### Removed
 - Support for Ruby < 3.1 (older rubies no longer supported)
@@ -88,7 +93,8 @@ lolcommits 0.14.0)
 ### Changed
 - Initial release (Yanked)
 
-[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/lolcommits/lolcommits-loltext/compare/v0.2.1...v0.3.0

@@ -5,9 +5,9 @@ require 'lolcommits/loltext/version'
 Gem::Specification.new do |spec|
   spec.name     = "lolcommits-loltext"
   spec.version  = Lolcommits::Loltext::VERSION
-  spec.authors  = ["Matthew Hutchinson"]
-  spec.email    = ["matt@hiddenloop.com"]
-  spec.summary  = %q{lolcommits commit message annotation plugin}
+  spec.authors  = [ "Matthew Hutchinson" ]
+  spec.email    = [ "matt@hiddenloop.com" ]
+  spec.summary  = %q(lolcommits commit message annotation plugin)
   spec.homepage = "https://github.com/lolcommits/lolcommits-loltext"
   spec.license  = "LGPL-3.0"
 
@@ -28,11 +28,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = `git ls-files -- {test,features}/*`.split("\n")
   spec.bindir        = "bin"
   spec.executables   = []
-  spec.require_paths = ["lib"]
+  spec.require_paths = [ "lib" ]
 
   spec.required_ruby_version = ">= 3.1"
 
-  spec.add_development_dependency "lolcommits", ">= 0.17.0"
+  spec.add_development_dependency "lolcommits", ">= 0.17.2"
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest"
