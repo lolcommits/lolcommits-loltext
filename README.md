@@ -156,7 +156,7 @@ The gem is available as open source under the terms of
 ## Links
 
 * [CI](https://github.com/lolcommits/lolcommits-loltext/actions/workflows/ci.yml)
-* [RDoc](http://rdoc.info/projects/lolcommits/lolcommits-loltext)
+* [RDoc](https://rubydoc.info/gems/lolcommits-loltext)
 * [Issues](http://github.com/lolcommits/lolcommits-loltext/issues)
 * [Report a bug](http://github.com/lolcommits/lolcommits-loltext/issues/new)
 * [Gem](http://rubygems.org/gems/lolcommits-loltext)

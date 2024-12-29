@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     "homepage_uri"      => "https://github.com/lolcommits/lolcommits-loltext",
+    "documentation_uri" => "https://rubydoc.info/gems/lolcommits-loltext",
     "changelog_uri"     => "https://github.com/lolcommits/lolcommits-loltext/blob/master/CHANGELOG.md",
     "source_code_uri"   => "https://github.com/lolcommits/lolcommits-loltext",
     "bug_tracker_uri"   => "https://github.com/lolcommits/lolcommits-loltext/issues",
